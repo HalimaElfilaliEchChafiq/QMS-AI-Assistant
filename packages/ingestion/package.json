@@ -1,0 +1,39 @@
+{
+  "name": "@kit/ingestion",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules",
+    "format": "prettier --check \"**/*.{ts,tsx}\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "prettier": "@kit/prettier-config",
+  "exports": {
+    "./chunking": "./src/chunking.ts",
+    "./text-extractor": "./src/text-extractor.ts",
+    "./embeddings": "./src/embeddings.ts",
+    "./hybrid-search": "./src/hybrid-search.ts",
+    "./sharepoint-connector": "./src/sharepoint-connector.ts",
+    "./sharepoint-permissions": "./src/sharepoint-permissions.ts"
+  },
+  "devDependencies": {
+    "@kit/eslint-config": "workspace:*",
+    "@kit/prettier-config": "workspace:*",
+    "@kit/tsconfig": "workspace:*",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.75.0",
+    "mammoth": "^1.9.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  }
+}

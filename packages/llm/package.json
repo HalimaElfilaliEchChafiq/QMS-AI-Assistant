@@ -1,0 +1,35 @@
+{
+  "name": "@kit/llm",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules",
+    "format": "prettier --check \"**/*.{ts,tsx}\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@kit/prettier-config",
+  "exports": {
+    "./client": "./src/client.ts",
+    "./prompts": "./src/prompts.ts",
+    "./memory": "./src/memory.ts",
+    "./confidence": "./src/confidence.ts",
+    "./procedural-rules": "./src/procedural-rules.ts"
+  },
+  "devDependencies": {
+    "@kit/eslint-config": "workspace:*",
+    "@kit/prettier-config": "workspace:*",
+    "@kit/tsconfig": "workspace:*"
+  },
+  "dependencies": {
+    "@kit/ingestion": "workspace:*",
+    "@supabase/supabase-js": "2.75.0"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  }
+}
